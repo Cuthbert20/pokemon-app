@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Pokemon = () => {
+const Pokemon = (props) => {
+    console.log(props)
     return (
         <div>
-            Pokemon
+            {props.pokemonData.name}
+            <img src={props.pokemonData.img} alt=""/>
         </div>
     )
 }
