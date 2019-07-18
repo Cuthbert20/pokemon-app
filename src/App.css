@@ -1,13 +1,41 @@
+.body {
+  background-color: #7F557D;
+}
+
 .App {
   text-align: center;
 }
 
 .pokemon-list {
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .finder {
   display: flex;
   justify-content: center;
+}
+
+.grass {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  text-transform: capitalize;
+}
+
+.grass > img {
+  cursor: pointer;
+}
+
+.pokemon {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon > img {
+  cursor: pointer;
 }

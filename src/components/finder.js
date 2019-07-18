@@ -9,6 +9,7 @@ export default class Finder extends Component {
         this.state = {
             grassArr: []
         }
+        this.catchOne = this.catchOne.bind(this)
     }
     componentDidMount(){
         axios.get('/api/grass').then(res => {
@@ -17,11 +18,15 @@ export default class Finder extends Component {
             })
         })
     }
+    catchOne(body) {
+        this.props.catchFn(body)
+        this.componentDidMount()
+    }
     render() {
         return(
             <div className="finder">
                 {this.state.grassArr.map(pokemon => {
-                  return  <Grass key={pokemon.name} pokeData={pokemon} />
+                  return  <Grass key={pokemon.name} pokeData={pokemon} catchFn={this.catchOne}/>
                 })}
             </div>
         )
